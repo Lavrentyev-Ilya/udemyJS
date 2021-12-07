@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('test');
-
 // Dolphins and Coals
 const codeCh_1 = 'Dolphins and Coals';
 const calcAverDolph = (score1, score2, score3) => {
