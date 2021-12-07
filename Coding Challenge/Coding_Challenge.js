@@ -62,7 +62,6 @@ const jonas = {
 	}
 };
 
-console.log('New');
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
 
