@@ -142,3 +142,17 @@ const elias = {
 }
 elias.greet();
 elias.calcAge();
+
+// arguments keywords
+const addExpr = function (a, b) {
+   console.log(arguments);
+   return a + b;
+}
+addExpr(2, 5);
+addExpr(2, 5, 8, 9);
+
+var addArrow = (a, b) => {
+   console.log(arguments);
+   return a + b;
+}
+addArrow(2, 5, 6);
