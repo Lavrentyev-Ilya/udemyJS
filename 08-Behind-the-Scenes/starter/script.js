@@ -119,13 +119,22 @@ const elias = {
       // console.log(this);
       console.log(2022 - this.year);
 
-      const self = this; // self or that. Reserve "this"
-      const isMillenial = function () {
-         console.log(self);
-         console.log(self.year >= 1981 && self.year <= 1996);
+      // Solution 1. Pre-ES6 solution!
+      // const self = this; // Pre-ES6 solution! self or that. Reserve "this".
+      // const isMillenial = function () {
+      //    console.log(self);
+      //    console.log(self.year >= 1981 && self.year <= 1996);
+      // };
+      // isMillenial();
+
+      // Solution 2. ES6 solution!
+      const isMillenial = () => {
+         console.log(this);
+         console.log(this.year >= 1981 && this.year <= 1996);
       };
       isMillenial();
    },
+
    greet: () => { // Never use an arrow function as a method
       console.log(this);
       console.log(`Hey ${this.firstName}`);
