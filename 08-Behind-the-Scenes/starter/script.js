@@ -110,14 +110,14 @@
 
 
 // REGULAR FUNCTIONS VS ARROW FUNCTIONS
-var firstName = 'Dasha';
-
-const elias = {
-   firstName: 'Elias',
-   year: 1981,
-   calcAge: function(){
+// var firstName = 'Dasha';
+//
+// const elias = {
+//    firstName: 'Elias',
+//    year: 1981,
+//    calcAge: function(){
       // console.log(this);
-      console.log(2022 - this.year);
+      // console.log(2022 - this.year);
 
       // Solution 1. Pre-ES6 solution!
       // const self = this; // Pre-ES6 solution! self or that. Reserve "this".
@@ -127,32 +127,52 @@ const elias = {
       // };
       // isMillenial();
 
-      // Solution 2. ES6 solution!
-      const isMillenial = () => {
-         console.log(this);
-         console.log(this.year >= 1981 && this.year <= 1996);
-      };
-      isMillenial();
-   },
+//       // Solution 2. ES6 solution!
+//       const isMillenial = () => {
+//          console.log(this);
+//          console.log(this.year >= 1981 && this.year <= 1996);
+//       };
+//       isMillenial();
+//    },
+//
+//    greet: () => { // Never use an arrow function as a method
+//       console.log(this);
+//       console.log(`Hey ${this.firstName}`);
+//    },
+// }
+// elias.greet();
+// elias.calcAge();
+//
+// // arguments keywords
+// const addExpr = function (a, b) {
+//    console.log(arguments);
+//    return a + b;
+// }
+// addExpr(2, 5);
+// addExpr(2, 5, 8, 9);
+//
+// var addArrow = (a, b) => {
+//    console.log(arguments);
+//    return a + b;
+// }
+// addArrow(2, 5, 6);
 
-   greet: () => { // Never use an arrow function as a method
-      console.log(this);
-      console.log(`Hey ${this.firstName}`);
-   },
-}
-elias.greet();
-elias.calcAge();
+// PRIMITIVES VS OBJECTS
 
-// arguments keywords
-const addExpr = function (a, b) {
-   console.log(arguments);
-   return a + b;
-}
-addExpr(2, 5);
-addExpr(2, 5, 8, 9);
+let lastName = 'Lavrentyev';
+let oldLastName = lastName;
+lastName = 'Petrov';
 
-var addArrow = (a, b) => {
-   console.log(arguments);
-   return a + b;
-}
-addArrow(2, 5, 6);
+console.log(lastName, oldLastName);
+
+const dasha = {
+   firstName: 'Dasha',
+   lastName: 'Kourochka',
+   age: 35,
+};
+const marriedDasha = dasha;
+marriedDasha.lastName = 'Lavrentyeva';
+console.log('Before marriage:', dasha);
+console.log('After marriage:', marriedDasha);
+
+
