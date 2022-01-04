@@ -158,21 +158,40 @@
 // addArrow(2, 5, 6);
 
 // PRIMITIVES VS OBJECTS
-
+// primitives types
 let lastName = 'Lavrentyev';
 let oldLastName = lastName;
 lastName = 'Petrov';
 
 console.log(lastName, oldLastName);
 
-const dasha = {
+// reference types
+// const dasha = {
+//    firstName: 'Dasha',
+//    lastName: 'Kourochka',
+//    age: 35,
+// };
+// const marriedDasha = dasha;
+// marriedDasha.lastName = 'Lavrentyeva';
+// console.log('Before marriage:', dasha);
+// console.log('After marriage:', marriedDasha);
+// marriedDasha = {};
+
+// copying objects
+const dasha2 = {
    firstName: 'Dasha',
    lastName: 'Kourochka',
    age: 35,
+   family: ['Pavel', 'Andrey'],
 };
-const marriedDasha = dasha;
-marriedDasha.lastName = 'Lavrentyeva';
-console.log('Before marriage:', dasha);
-console.log('After marriage:', marriedDasha);
+const dashaCopy =  Object.assign({}, dasha2);
+dashaCopy.lastName = 'Lavretyeva';
+dashaCopy.family.push('Anna');
+
+console.log('Before marriage:', dasha2);
+console.log('After marriage:', dashaCopy);
+
+
+
 
 
