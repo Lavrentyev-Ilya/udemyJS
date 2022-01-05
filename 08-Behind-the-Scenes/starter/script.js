@@ -25,46 +25,173 @@
 // const firstName = 'Ilya';
 // calcAge(1981);
 // console.log();
+// -----------------------
 
-// Hoisting and TDZ
+
+// HOISTING AND TDZ
+
 // Variables
 // console.log(me);
 // console.log(job);
 // console.log(year);
 
-var me = 'Ilya';
-let job = 'Developer';
-const year = 1981;
+// var me = 'Ilya';
+// let job = 'Developer';
+// const year = 1981;
 
 // Functions
 // console.log(addDecl(2, 3));
 // console.log(addExpr(2, 3))
 // console.log(addArrow(2, 3));
 
-function addDecl(a, b) {
-   return a + b;
-}
-
-const addExpr = function (a, b) {
-   return a + b;
-}
-
-var addArrow = (a, b) => a + b;
+// function addDecl(a, b) {
+//    return a + b;
+// }
+//
+// const addExpr = function (a, b) {
+//    return a + b;
+// }
+//
+// var addArrow = (a, b) => a + b;
 
 // Example
 
-console.log(numProducts)
-if (!numProducts) deleteShoppingCart();
+// console.log(numProducts)
+// if (!numProducts) deleteShoppingCart();
+//
+// var numProducts = 10;
+//
+// function deleteShoppingCart() {
+//    console.log('All products deleted!');
+// }
+//
+// var x = 1;
+// let y = 2;
+// const z = 3;
+// console.log(x === window.x);
+// console.log(y === window.y);
+// console.log(z === window.z);
 
-var numProducts = 10;
+// THIS
 
-function deleteShoppingCart() {
-   console.log('All products deleted!');
-}
+// console.log(this);
+//
+// const calcAge = function (birthYear) {
+//    console.log(2022 - birthYear);
+//    console.log(this);
+// }
+// calcAge(1981);
 
-var x = 1;
-let y = 2;
-const z = 3;
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(z === window.z);
+// const calcAgeArrow = birthYear => {
+//    console.log(2022 - birthYear);
+//    console.log(this);
+// }
+// calcAgeArrow(1980);
+
+// const elias = {
+//    year: 1981,
+//    calcAge: function(){
+//       console.log(this);
+//       console.log(2022 - this.year)
+//    }
+// }
+// elias.calcAge();
+//
+// const matilda = {
+//    year: 2017,
+// };
+//
+// matilda.callAge = elias.calcAge;
+// matilda.callAge();
+//
+// const f = elias.calcAge;
+// f();
+//----------------------
+
+
+// REGULAR FUNCTIONS VS ARROW FUNCTIONS
+// var firstName = 'Dasha';
+//
+// const elias = {
+//    firstName: 'Elias',
+//    year: 1981,
+//    calcAge: function(){
+      // console.log(this);
+      // console.log(2022 - this.year);
+
+      // Solution 1. Pre-ES6 solution!
+      // const self = this; // Pre-ES6 solution! self or that. Reserve "this".
+      // const isMillenial = function () {
+      //    console.log(self);
+      //    console.log(self.year >= 1981 && self.year <= 1996);
+      // };
+      // isMillenial();
+
+//       // Solution 2. ES6 solution!
+//       const isMillenial = () => {
+//          console.log(this);
+//          console.log(this.year >= 1981 && this.year <= 1996);
+//       };
+//       isMillenial();
+//    },
+//
+//    greet: () => { // Never use an arrow function as a method
+//       console.log(this);
+//       console.log(`Hey ${this.firstName}`);
+//    },
+// }
+// elias.greet();
+// elias.calcAge();
+//
+// // arguments keywords
+// const addExpr = function (a, b) {
+//    console.log(arguments);
+//    return a + b;
+// }
+// addExpr(2, 5);
+// addExpr(2, 5, 8, 9);
+//
+// var addArrow = (a, b) => {
+//    console.log(arguments);
+//    return a + b;
+// }
+// addArrow(2, 5, 6);
+
+// PRIMITIVES VS OBJECTS
+// primitives types
+let lastName = 'Lavrentyev';
+let oldLastName = lastName;
+lastName = 'Petrov';
+
+console.log(lastName, oldLastName);
+
+// reference types
+// const dasha = {
+//    firstName: 'Dasha',
+//    lastName: 'Kourochka',
+//    age: 35,
+// };
+// const marriedDasha = dasha;
+// marriedDasha.lastName = 'Lavrentyeva';
+// console.log('Before marriage:', dasha);
+// console.log('After marriage:', marriedDasha);
+// marriedDasha = {};
+
+// copying objects
+const dasha2 = {
+   firstName: 'Dasha',
+   lastName: 'Kourochka',
+   age: 35,
+   family: ['Pavel', 'Andrey'],
+};
+const dashaCopy =  Object.assign({}, dasha2);
+dashaCopy.lastName = 'Lavretyeva';
+dashaCopy.family.push('Anna');
+
+console.log('Before marriage:', dasha2);
+console.log('After marriage:', dashaCopy);
+
+
+
+
+
