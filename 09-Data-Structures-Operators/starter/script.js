@@ -86,4 +86,4 @@ console.log(menu, starters)
 
 console.log(`${starter} and ${mainCourse}`);
 
-console.log(starter);
+console.log(mainCourse);
