@@ -57,7 +57,6 @@ let [main, , secondary] = restaurant.categories;
 
 // Receive 2 return values from a function
 const [starter, mainCourse] = (restaurant.order(2, 0));
-<<<<<<< HEAD
 
 // console.log(`${starter} and ${mainCourse}`);
 
@@ -85,8 +84,6 @@ console.log(restaurantsName, hours, tags);
 const {menu = [], starterMenu: starters = []} = restaurant;
 console.log(menu, starters)
 
-=======
->>>>>>> 4fe447997321d1fe0f761a9a7999f5eff288679a
 console.log(`${starter} and ${mainCourse}`);
 
 console.log(starter);
