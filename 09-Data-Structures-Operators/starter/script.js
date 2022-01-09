@@ -57,6 +57,7 @@ let [main, , secondary] = restaurant.categories;
 
 // Receive 2 return values from a function
 const [starter, mainCourse] = (restaurant.order(2, 0));
+
 // console.log(`${starter} and ${mainCourse}`);
 
 // Nested destructuring
@@ -83,4 +84,6 @@ console.log(restaurantsName, hours, tags);
 const {menu = [], starterMenu: starters = []} = restaurant;
 console.log(menu, starters)
 
+console.log(`${starter} and ${mainCourse}`);
 
+console.log(starter);
