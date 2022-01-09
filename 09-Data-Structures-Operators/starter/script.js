@@ -40,11 +40,11 @@ const b = arr[1];
 const c = arr[2];
 
 const [x, y, z] = arr; // Array Destructuring
-console.log(x, y, z);
-console.log(arr);
+// console.log(x, y, z);
+// console.log(arr);
 
 let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
+// console.log(main, secondary);
 
 // Switching variables
 // const temp = main;
@@ -53,8 +53,34 @@ console.log(main, secondary);
 // console.log(main, secondary);
 
 [main, secondary] = [secondary, main];
-console.log(main, secondary);
+// console.log(main, secondary);
 
 // Receive 2 return values from a function
 const [starter, mainCourse] = (restaurant.order(2, 0));
-console.log(`${starter} and ${mainCourse}`);
+// console.log(`${starter} and ${mainCourse}`);
+
+// Nested destructuring
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);
+const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// Default values
+const [p = 1, q = 1, r = 1] = [8, 9];
+// console.log(p, q, r);
+//--------------------------
+
+// Objects destructuring
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours, categories[0]);
+
+// Change variables name
+const {name: restaurantsName, openingHours: hours, categories: tags} = restaurant;
+console.log(restaurantsName, hours, tags);
+
+// Setting a default variable value
+const {menu = [], starterMenu: starters = []} = restaurant;
+console.log(menu, starters)
+
+
