@@ -1,22 +1,16 @@
 'use strict';
 
-// Array Destructuring
-
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
+  names: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-   order: function(starterIndex, mainIndex){
-     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-   },
 
   openingHours: {
     thu: {
@@ -32,14 +26,35 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function(starterIndex, mainIndex){
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function({starterIndex = 1, mainIndex = 0, time = '20:00', address}){
+    console.log(`Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+  }
 };
 
-const arr = [2,3,4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via de Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+restaurant.orderDelivery({
+  address: 'Via de Sole, 21',
+});
 
-const [x, y, z] = arr; // Array Destructuring
+
+// Array Destructuring--------
+
+// const arr = [2,3,4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
+
+// const [x, y, z] = arr; // Array Destructuring
 // console.log(x, y, z);
 // console.log(arr);
 
@@ -73,17 +88,34 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 //--------------------------
 
 // Objects destructuring
-const {name, openingHours, categories} = restaurant;
-console.log(name, openingHours, categories[0]);
+const {names, openingHours, categories} = restaurant;
+// console.log(names, openingHours, categories[2]);
 
 // Change variables name
-const {name: restaurantsName, openingHours: hours, categories: tags} = restaurant;
+const {
+  names: restaurantsName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
 // console.log(restaurantsName, hours, tags);
 
 // Setting a default variable value
-const {menu = [], starterMenu: starters = []} = restaurant;
+const {
+  menu = [],
+  starterMenu: starters = [],
+} = restaurant;
 // console.log(menu, starters)
 
-// console.log(`${starter} and ${mainCourse}`);
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = {a: 23, b: 7, c: 14};
 
-// console.log(starter);
+({a, b} = obj);
+// console.log(a, b);
+
+// Nested objects
+const {fri: {open:o, close:c}} = openingHours;
+// console.log(o, c);
+
+
