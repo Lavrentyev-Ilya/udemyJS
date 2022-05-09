@@ -62,8 +62,8 @@ const [starter, mainCourse] = (restaurant.order(2, 0));
 
 // Nested destructuring
 const nested = [2, 4, [5, 6]];
-const [i, , j] = nested;
-console.log(i, j);
+// const [i, , j] = nested;
+// console.log(i, j);
 // const [i, , [j, k]] = nested;
 // console.log(i, j, k);
 
@@ -74,7 +74,7 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 
 // Objects destructuring
 const {name, openingHours, categories} = restaurant;
-// console.log(name, openingHours, categories[0]);
+console.log(name, openingHours, categories[0]);
 
 // Change variables name
 const {name: restaurantsName, openingHours: hours, categories: tags} = restaurant;
