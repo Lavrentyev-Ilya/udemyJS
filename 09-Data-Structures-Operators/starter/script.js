@@ -36,15 +36,15 @@ const restaurant = {
   }
 };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via de Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
-restaurant.orderDelivery({
-  address: 'Via de Sole, 21',
-});
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via de Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+// restaurant.orderDelivery({
+//   address: 'Via de Sole, 21',
+// });
 
 
 // Array Destructuring--------
@@ -118,4 +118,15 @@ const obj = {a: 23, b: 7, c: 14};
 const {fri: {open:o, close:c}} = openingHours;
 // console.log(o, c);
 
+// Spread Operator
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // This is bad!
+// console.log(badNewArr);
 
+const newArr = [1, 2, ...arr]; // This is good!
+console.log(newArr);
+
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
