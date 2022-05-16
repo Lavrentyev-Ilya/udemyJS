@@ -128,5 +128,5 @@ console.log(newArr);
 
 console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+const newMenu = [...restaurant.mainMenu, 'Gnocci1'];
 console.log(newMenu);
