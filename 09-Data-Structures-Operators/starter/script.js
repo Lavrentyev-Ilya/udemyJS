@@ -6,7 +6,7 @@ const flights =
 
 // Data needed for first part of the section
 const restaurant = {
-  names: 'Classico Italiano',
+  name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
@@ -31,9 +31,21 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function({starterIndex = 1, mainIndex = 0, time = '20:00', address}){
-    console.log(`Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
-  }
+  orderDelivery: function({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address
+  }){
+    console.log(
+      `Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+
+  orderPasta: function(ing1, ing2, ing3){
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+  },
+
 };
 
 // restaurant.orderDelivery({
@@ -88,12 +100,12 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 //--------------------------
 
 // Objects destructuring
-const {names, openingHours, categories} = restaurant;
-// console.log(names, openingHours, categories[2]);
+const {name, openingHours, categories} = restaurant;
+// console.log(name, openingHours, categories[2]);
 
 // Change variables name
 const {
-  names: restaurantsName,
+  name: restaurantsName,
   openingHours: hours,
   categories: tags,
 } = restaurant;
@@ -124,9 +136,45 @@ const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // This is bad!
 // console.log(badNewArr);
 
 const newArr = [1, 2, ...arr]; // This is good!
-console.log(newArr);
+// console.log(newArr);
 
-console.log(...newArr);
+// console.log(...newArr);
 
 const newMenu = [...restaurant.mainMenu, 'Gnocci1'];
-console.log(newMenu);
+// console.log(newMenu);
+
+//Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
+
+//Join 2 arrays
+const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(wholeMenu);
+
+// Iterables: arrays, sctrings, maps, sets. NOT objects
+const str = 'Ilya';
+const letters = [...str, ' ', 'L.'];
+// console.log(letters);
+
+//Real-world example
+const ingridients = [
+  // prompt('Lets\'s make pasts! Ingridient 1'),
+  // prompt('Ingridient 2'),
+  // prompt('Ingridient 3')
+];
+console.log(ingridients);
+
+restaurant.orderPasta(...ingridients);
+
+//Objests
+const newRestaurant = {
+  foundedIn: 1998,
+  ...restaurant,
+  founder: 'Guiseppe'
+};
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
