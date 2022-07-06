@@ -52,6 +52,105 @@ const restaurant = {
   }
 };
 
+// Short Circuiting (&& and ||)
+//Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Ilya');
+console.log('' || 'Ilya');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 23;
+const resguests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(resguests1);
+
+// 1) Destructuring
+
+// Rest pattern and Parameters
+
+// //SPREAD, decause on RIGHT side of =
+// const arr_1 = [1, 2, ...[3, 4]];
+// console.log(arr_1);
+
+// //REST, decause on LEFT side of =
+// const [a1, b1, ...others] = arr_1;
+// console.log(a1, b1, others);
+
+// const [pizza, , rissoto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(pizza, rissoto, otherFood);
+
+// //Objects
+// const {fri, ...weekdays} = restaurant.openingHours;
+// console.log(fri, weekdays);
+
+
+// // 2) Functions
+// const add = function(...numbers) {
+//   // let sum = 0;
+//   // for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   // console.log(sum);
+//   console.log(numbers);
+// }
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 6, 1, 4);
+
+// const x = [23, 5, 7];
+// add(...x);
+
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms');
+
+// // Spread Operator
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // This is bad!
+// // console.log(badNewArr);
+
+// const newArr = [1, 2, ...arr]; // This is good!
+// // console.log(newArr);
+
+// // console.log(...newArr);
+
+// const newMenu = [...restaurant.mainMenu, 'Gnocci1'];
+// // console.log(newMenu);
+
+// //Copy Array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// // console.log(mainMenuCopy);
+
+// //Join 2 arrays
+// const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// // console.log(wholeMenu);
+
+// // Iterables: arrays, sctrings, maps, sets. NOT objects
+// const str = 'Ilya';
+// const letters = [...str, ' ', 'L.'];
+// // console.log(letters);
+
+// //Real-world example
+// const ingridients = [
+//   // prompt('Lets\'s make pasts! Ingridient 1'),
+//   // prompt('Ingridient 2'),
+//   // prompt('Ingridient 3')
+// ];
+// // console.log(ingridients);
+
+// restaurant.orderPasta(...ingridients);
+
+// //Objests
+// const newRestaurant = {
+//   foundedIn: 1998,
+//   ...restaurant,
+//   founder: 'Guiseppe'
+// };
+// // console.log(newRestaurant);
+
+// const restaurantCopy = {...restaurant};
+// restaurantCopy.name = 'Ristorante Roma';
+// // console.log(restaurantCopy.name);
+// // console.log(restaurant.name);
+
 // restaurant.orderDelivery({
 //   time: '22:30',
 //   address: 'Via de Sole, 21',
@@ -134,88 +233,5 @@ const obj = {a: 23, b: 7, c: 14};
 const {fri: {open:o, close:c}} = openingHours;
 // console.log(o, c);
 
-// Spread Operator
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // This is bad!
-// console.log(badNewArr);
-
-const newArr = [1, 2, ...arr]; // This is good!
-// console.log(newArr);
-
-// console.log(...newArr);
-
-const newMenu = [...restaurant.mainMenu, 'Gnocci1'];
-// console.log(newMenu);
-
-//Copy Array
-const mainMenuCopy = [...restaurant.mainMenu];
-// console.log(mainMenuCopy);
-
-//Join 2 arrays
-const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-// console.log(wholeMenu);
-
-// Iterables: arrays, sctrings, maps, sets. NOT objects
-const str = 'Ilya';
-const letters = [...str, ' ', 'L.'];
-// console.log(letters);
-
-//Real-world example
-const ingridients = [
-  // prompt('Lets\'s make pasts! Ingridient 1'),
-  // prompt('Ingridient 2'),
-  // prompt('Ingridient 3')
-];
-// console.log(ingridients);
-
-restaurant.orderPasta(...ingridients);
-
-//Objests
-const newRestaurant = {
-  foundedIn: 1998,
-  ...restaurant,
-  founder: 'Guiseppe'
-};
-// console.log(newRestaurant);
-
-const restaurantCopy = {...restaurant};
-restaurantCopy.name = 'Ristorante Roma';
-// console.log(restaurantCopy.name);
-// console.log(restaurant.name);
-
-// 1) Destructuring
-
-// Rest pattern and Parameters
-
-//SPREAD, decause on RIGHT side of =
-const arr_1 = [1, 2, ...[3, 4]];
-console.log(arr_1);
-
-//REST, decause on LEFT side of =
-const [a1, b1, ...others] = arr_1;
-console.log(a1, b1, others);
-
-const [pizza, , rissoto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(pizza, rissoto, otherFood);
-
-//Objects
-const {fri, ...weekdays} = restaurant.openingHours;
-console.log(fri, weekdays);
 
 
-// 2) Functions
-const add = function(...numbers) {
-  // let sum = 0;
-  // for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  // console.log(sum);
-  console.log(numbers);
-}
-add(2, 3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 3, 6, 1, 4);
-
-const x = [23, 5, 7];
-add(...x);
-
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-restaurant.orderPizza('mushrooms');
