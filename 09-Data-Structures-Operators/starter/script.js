@@ -52,44 +52,66 @@ const restaurant = {
   }
 };
 
-// Short Circuiting (&& and ||)
+// ! Nullish Coalescing operator
+restaurant.numGuests = null;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+// ! Short Circuiting (&& and ||)
 //Use ANY data type, return ANY data type, short-circuiting
-console.log(3 || 'Ilya');
-console.log('' || 'Ilya');
-console.log(true || 0);
-console.log(undefined || null);
+// console.log('---- OR ----');
+// console.log(3 || 'Ilya');
+// console.log('' || 'Ilya');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-restaurant.numGuests = 23;
-const resguests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(resguests1);
+// restaurant.numGuests = 0;
+// const resguests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(resguests1);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+// console.log('---- AND ----');
+// console.log(0 && 'Ilya');
+// console.log(7 && 'Ilya');
+
+// console.log('Hello' && 23 && undefined && 'Ilya');
+// if(restaurant.orderPizza){
+//   restaurant.orderPizza('mushrooms', 'spinach', 'pineapple', 'coconut', 'apples');
+// }
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach', 'pineapple', 'coconut', 'apples');
+
 
 // 1) Destructuring
 
-// Rest pattern and Parameters
+// !  REST PATTERN AND PARAMETERS
 
-// //SPREAD, decause on RIGHT side of =
+// * SPREAD, decause on RIGHT side of =
 // const arr_1 = [1, 2, ...[3, 4]];
 // console.log(arr_1);
 
-// //REST, decause on LEFT side of =
+// * REST, decause on LEFT side of =
 // const [a1, b1, ...others] = arr_1;
 // console.log(a1, b1, others);
 
 // const [pizza, , rissoto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
 // console.log(pizza, rissoto, otherFood);
 
-// //Objects
+// * objects
 // const {fri, ...weekdays} = restaurant.openingHours;
 // console.log(fri, weekdays);
 
 
-// // 2) Functions
+// * 2) Functions
 // const add = function(...numbers) {
-//   // let sum = 0;
-//   // for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-//   // console.log(sum);
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
 //   console.log(numbers);
 // }
 // add(2, 3);
@@ -102,7 +124,7 @@ console.log(resguests1);
 // restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 // restaurant.orderPizza('mushrooms');
 
-// // Spread Operator
+// ! SPREAD OPERATOR
 // const arr = [7, 8, 9];
 // const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // This is bad!
 // // console.log(badNewArr);
