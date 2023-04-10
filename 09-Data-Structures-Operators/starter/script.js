@@ -43,14 +43,47 @@ const restaurant = {
   },
 
   orderPasta: function(ing1, ing2, ing3){
-    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+    // console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
   },
 
   orderPizza: function(mainIngrediant, ...otherIngrediants) {
-    console.log(mainIngrediant);
+    // console.log(mainIngrediant);
     if(otherIngrediants!='')console.log(otherIngrediants);
   }
 };
+
+
+// ! Logical Assignment Operators
+
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Elias Lavrentyev'
+};
+
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest1.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// nullish assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assignment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS>'; the rest1.owner will be underfined
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
 
 // ! Nullish Coalescing operator
 restaurant.numGuests = null;
@@ -58,7 +91,7 @@ restaurant.numGuests = null;
 // console.log(guests);
 // Nullish: null and undefined (NOT 0 or '')
 const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect);
+// console.log(guestCorrect);
 
 // ! Short Circuiting (&& and ||)
 //Use ANY data type, return ANY data type, short-circuiting
