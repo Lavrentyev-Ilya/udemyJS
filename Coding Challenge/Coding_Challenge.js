@@ -24,7 +24,7 @@ const checkWinner = (avgDolph, avgCoal) => {
 	}
 }
 
-console.log(`${codeCh_1}: ${checkWinner(avgDolph, avgCoal)}`);
+// console.log(`${codeCh_1}: ${checkWinner(avgDolph, avgCoal)}`);
 
 // Steven is still building his tip calculator
 
@@ -40,7 +40,7 @@ const bills = [125, 555, 44];
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2],];
 
-console.log(`${codeCh_2}: ${bills[0]} + ${tips[0]} = ${total[0]}`);
+// console.log(`${codeCh_2}: ${bills[0]} + ${tips[0]} = ${total[0]}`);
 
 
 //Friends of Jonas. Jonas driver license
@@ -63,10 +63,10 @@ const jonas = {
 };
 
 
-console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
+// console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
 
 jonas.CalcAge();
-console.log(`${jonas.firstName} is a ${jonas.age}-years old teacher and he has ${jonas.DLincense()} driver's license`);
+// console.log(`${jonas.firstName} is a ${jonas.age}-years old teacher and he has ${jonas.DLincense()} driver's license`);
 
 
 // Coding challenge
@@ -101,5 +101,10 @@ if (MarkBmi.calcBMI() > JohnBmi.calcBMI()) {
 	textBmi = `${JohnBmi.name}'s BMI (${JohnBmi.calcBMI()}) is higher than ${MarkBmi.name}'s (${MarkBmi.calcBMI()})`;
 }
 
-console.log(textBmi);
+// console.log(textBmi);
+
+//09-Data-Structures-Operators
+// Coding Challenge #1
+
+
 

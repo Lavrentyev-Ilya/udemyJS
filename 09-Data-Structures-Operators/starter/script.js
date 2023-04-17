@@ -73,8 +73,8 @@ const rest2 = {
 // rest2.numGuests ||= 10;
 
 // nullish assignment operator
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
 
 // AND assignment operator
 // rest1.owner = rest1.owner && '<ANONYMOUS>'; the rest1.owner will be underfined
