@@ -52,7 +52,6 @@ const restaurant = {
   }
 };
 
-
 // ! Logical Assignment Operators
 
 const rest1 = {
@@ -217,7 +216,7 @@ const guestCorrect = restaurant.numGuests ?? 10;
 // });
 
 
-// Array Destructuring--------
+//! Array Destructuring--------
 
 // const arr = [2,3,4];
 // const a = arr[0];
@@ -229,9 +228,9 @@ const guestCorrect = restaurant.numGuests ?? 10;
 // console.log(arr);
 
 let [main, secondary] = restaurant.categories;
-// console.log(main, secondary);
+console.log(main, secondary);
 
-// Switching variables
+//* Switching variables
 // const temp = main;
 // main = secondary;
 // secondary = temp;
@@ -245,23 +244,23 @@ const [starter, mainCourse] = (restaurant.order(2, 0));
 
 // console.log(`${starter} and ${mainCourse}`);
 
-// Nested destructuring
+//* Nested destructuring
 const nested = [2, 4, [5, 6]];
 // const [i, , j] = nested;
 // console.log(i, j);
 // const [i, , [j, k]] = nested;
 // console.log(i, j, k);
 
-// Default values
+//* Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
-// console.log(p, q, r);
+console.log(p, q, r);
 //--------------------------
 
-// Objects destructuring
+//! Objects destructuring
 const {name, openingHours, categories} = restaurant;
 // console.log(name, openingHours, categories[2]);
 
-// Change variables name
+//* Change variables name
 const {
   name: restaurantsName,
   openingHours: hours,
@@ -276,7 +275,7 @@ const {
 } = restaurant;
 // console.log(menu, starters)
 
-// Mutating variables
+//* Mutating variables
 let a = 111;
 let b = 999;
 const obj = {a: 23, b: 7, c: 14};
@@ -284,7 +283,7 @@ const obj = {a: 23, b: 7, c: 14};
 ({a, b} = obj);
 // console.log(a, b);
 
-// Nested objects
+//* Nested objects
 const {fri: {open:o, close:c}} = openingHours;
 // console.log(o, c);
 
