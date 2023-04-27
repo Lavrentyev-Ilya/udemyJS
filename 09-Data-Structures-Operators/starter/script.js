@@ -81,8 +81,8 @@ const rest2 = {
 rest1.owner &&= '<ANONYMOUS>';
 rest2.owner &&= '<ANONYMOUS>';
 
-console.log(rest1);
-console.log(rest2);
+// console.log(rest1);
+// console.log(rest2);
 
 // ! Nullish Coalescing operator
 restaurant.numGuests = null;
@@ -215,6 +215,38 @@ const guestCorrect = restaurant.numGuests ?? 10;
 //   address: 'Via de Sole, 21',
 // });
 
+//! Objects destructuring
+const {name, openingHours, categories} = restaurant;
+// console.log(name, openingHours, categories[2]);
+
+//* Change variables name
+const {
+  name: restaurantsName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+// console.log(restaurantsName, hours, tags);
+
+//* Setting a default variable value
+const {
+  menu = [],
+  starterMenu: starters = [],
+} = restaurant;
+// console.log(menu, starters)
+
+//* Mutating variables
+let a = 111;
+let b = 999;
+const obj = {a: 23, b: 7, c: 14};
+
+({a, b} = obj);
+// console.log(a, b);
+
+//* Nested objects
+const {fri: {open:o, close:c}} = openingHours;
+// console.log(o, c);
+
+restaurant.orderDelivery({starterIndex: 1, address:'Via del Sol 21'});
 
 //! Array Destructuring--------
 
@@ -228,7 +260,7 @@ const guestCorrect = restaurant.numGuests ?? 10;
 // console.log(arr);
 
 let [main, secondary] = restaurant.categories;
-console.log(main, secondary);
+// console.log(main, secondary);
 
 //* Switching variables
 // const temp = main;
@@ -253,39 +285,8 @@ const nested = [2, 4, [5, 6]];
 
 //* Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
-console.log(p, q, r);
+// console.log(p, q, r);
 //--------------------------
-
-//! Objects destructuring
-const {name, openingHours, categories} = restaurant;
-// console.log(name, openingHours, categories[2]);
-
-//* Change variables name
-const {
-  name: restaurantsName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-// console.log(restaurantsName, hours, tags);
-
-// Setting a default variable value
-const {
-  menu = [],
-  starterMenu: starters = [],
-} = restaurant;
-// console.log(menu, starters)
-
-//* Mutating variables
-let a = 111;
-let b = 999;
-const obj = {a: 23, b: 7, c: 14};
-
-({a, b} = obj);
-// console.log(a, b);
-
-//* Nested objects
-const {fri: {open:o, close:c}} = openingHours;
-// console.log(o, c);
 
 
 
