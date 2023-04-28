@@ -157,63 +157,63 @@ const guestCorrect = restaurant.numGuests ?? 10;
 // restaurant.orderPizza('mushrooms');
 
 // ! SPREAD OPERATOR
-// const arr = [7, 8, 9];
-// const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // This is bad!
-// // console.log(badNewArr);
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; // This is bad!
+// console.log(badNewArr);
 
-// const newArr = [1, 2, ...arr]; // This is good!
-// // console.log(newArr);
+const newArr = [1, 2, ...arr]; // This is good!
+// console.log(newArr);
 
-// // console.log(...newArr);
+// console.log(...newArr);
 
-// const newMenu = [...restaurant.mainMenu, 'Gnocci1'];
-// // console.log(newMenu);
+const newMenu = [...restaurant.mainMenu, 'Gnocci1'];
+// console.log(newMenu);
 
-// //Copy Array
-// const mainMenuCopy = [...restaurant.mainMenu];
-// // console.log(mainMenuCopy);
+//* Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-// //Join 2 arrays
-// const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-// // console.log(wholeMenu);
+//Join 2 arrays
+const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(wholeMenu);
 
-// // Iterables: arrays, sctrings, maps, sets. NOT objects
-// const str = 'Ilya';
-// const letters = [...str, ' ', 'L.'];
-// // console.log(letters);
+//* Iterables: arrays, sctrings, maps, sets. NOT objects
+const str = 'Ilya';
+const letters = [...str, ' ', 'L.'];
+// console.log(letters);
 
-// //Real-world example
-// const ingridients = [
-//   // prompt('Lets\'s make pasts! Ingridient 1'),
-//   // prompt('Ingridient 2'),
-//   // prompt('Ingridient 3')
-// ];
-// // console.log(ingridients);
+//* Real-world example
+const ingridients = [
+  // prompt('Lets\'s make pasts! Ingridient 1'),
+  // prompt('Ingridient 2'),
+  // prompt('Ingridient 3')
+];
+// console.log(ingridients);
 
-// restaurant.orderPasta(...ingridients);
+restaurant.orderPasta(...ingridients);
 
-// //Objests
-// const newRestaurant = {
-//   foundedIn: 1998,
-//   ...restaurant,
-//   founder: 'Guiseppe'
-// };
-// // console.log(newRestaurant);
+//* Objests
+const newRestaurant = {
+  foundedIn: 1998,
+  ...restaurant,
+  founder: 'Guiseppe'
+};
+// console.log(newRestaurant);
 
-// const restaurantCopy = {...restaurant};
-// restaurantCopy.name = 'Ristorante Roma';
-// // console.log(restaurantCopy.name);
-// // console.log(restaurant.name);
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
-// restaurant.orderDelivery({
-//   time: '22:30',
-//   address: 'Via de Sole, 21',
-//   mainIndex: 2,
-//   starterIndex: 2,
-// });
-// restaurant.orderDelivery({
-//   address: 'Via de Sole, 21',
-// });
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via de Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+restaurant.orderDelivery({
+  address: 'Via de Sole, 21',
+});
 
 //! Objects destructuring
 const {name, openingHours, categories} = restaurant;
