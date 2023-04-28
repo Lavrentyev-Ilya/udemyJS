@@ -246,7 +246,7 @@ const obj = {a: 23, b: 7, c: 14};
 const {fri: {open:o, close:c}} = openingHours;
 // console.log(o, c);
 
-restaurant.orderDelivery({starterIndex: 1, address:'Via del Sol 21'});
+// restaurant.orderDelivery({starterIndex: 1, address:'Via del Sol 21'});
 
 //! Array Destructuring--------
 
