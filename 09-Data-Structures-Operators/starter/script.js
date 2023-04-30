@@ -43,11 +43,11 @@ const restaurant = {
   },
 
   orderPasta: function(ing1, ing2, ing3){
-    // console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
   },
 
   orderPizza: function(mainIngrediant, ...otherIngrediants) {
-    // console.log(mainIngrediant);
+    console.log(mainIngrediant);
     if(otherIngrediants!='')console.log(otherIngrediants);
   }
 };
@@ -118,34 +118,32 @@ const guestCorrect = restaurant.numGuests ?? 10;
 // }
 // restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach', 'pineapple', 'coconut', 'apples');
 
-
-// 1) Destructuring
-
 // !  REST PATTERN AND PARAMETERS
+//* 1) Destructuring
 
 // * SPREAD, decause on RIGHT side of =
-// const arr_1 = [1, 2, ...[3, 4]];
+const arr_1 = [1, 2, ...[3, 4]];
 // console.log(arr_1);
 
 // * REST, decause on LEFT side of =
-// const [a1, b1, ...others] = arr_1;
+const [a1, b1, ...others] = arr_1;
 // console.log(a1, b1, others);
 
-// const [pizza, , rissoto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+const [pizza, , rissoto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
 // console.log(pizza, rissoto, otherFood);
 
 // * objects
-// const {fri, ...weekdays} = restaurant.openingHours;
+const {fri, ...weekdays} = restaurant.openingHours;
 // console.log(fri, weekdays);
 
 
-// * 2) Functions
-// const add = function(...numbers) {
-//   let sum = 0;
-//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-//   console.log(sum);
-//   console.log(numbers);
-// }
+//* 2) Functions
+const add = function(...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+  console.log(numbers);
+}
 // add(2, 3);
 // add(5, 3, 7, 2);
 // add(8, 2, 5, 3, 6, 1, 4);
@@ -166,14 +164,14 @@ const newArr = [1, 2, ...arr]; // This is good!
 
 // console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci1'];
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 // console.log(newMenu);
 
 //* Copy Array
 const mainMenuCopy = [...restaurant.mainMenu];
 // console.log(mainMenuCopy);
 
-//Join 2 arrays
+//* Join 2 arrays
 const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 // console.log(wholeMenu);
 
@@ -184,13 +182,13 @@ const letters = [...str, ' ', 'L.'];
 
 //* Real-world example
 const ingridients = [
-  // prompt('Lets\'s make pasts! Ingridient 1'),
+  // prompt('Lets\'s make pastas! Ingridient 1'),
   // prompt('Ingridient 2'),
   // prompt('Ingridient 3')
 ];
 // console.log(ingridients);
 
-restaurant.orderPasta(...ingridients);
+// restaurant.orderPasta(...ingridients);
 
 //* Objests
 const newRestaurant = {
@@ -205,15 +203,7 @@ restaurantCopy.name = 'Ristorante Roma';
 // console.log(restaurantCopy.name);
 // console.log(restaurant.name);
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via de Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
-restaurant.orderDelivery({
-  address: 'Via de Sole, 21',
-});
+
 
 //! Objects destructuring
 const {name, openingHours, categories} = restaurant;
@@ -246,7 +236,15 @@ const obj = {a: 23, b: 7, c: 14};
 const {fri: {open:o, close:c}} = openingHours;
 // console.log(o, c);
 
-// restaurant.orderDelivery({starterIndex: 1, address:'Via del Sol 21'});
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via de Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+// restaurant.orderDelivery({
+//   address: 'Via de Sole, 21',
+// });
 
 //! Array Destructuring--------
 
